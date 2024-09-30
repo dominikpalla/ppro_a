@@ -5,6 +5,7 @@
     <title>List of my cars</title>
 </head>
 <body>
+<a th:href="@{'/create'}">New Car</a>
 <ul>
     <li th:each="car, iter: ${cars}">
         <a th:href="@{'/detail/' + ${iter.index}}">
