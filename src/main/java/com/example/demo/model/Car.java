@@ -7,29 +7,17 @@ import jakarta.validation.constraints.Size;
 
 public class Car {
 
-    private Long id;
-
-    @NotEmpty
-    @Min(value = 6)
-    @Max(value = 6)
+    private int id = -1;
     private String spz;
-
-    @NotEmpty
-    @Min(value = 2)
-    @Max(value = 10)
     private String color;
-
-    @Size(min = 1, max = 100)
     private float tankVolume;
-
-    @Size(min = 1, max = 7)
     private int numberOfSeats;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
