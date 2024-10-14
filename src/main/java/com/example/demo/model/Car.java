@@ -1,16 +1,23 @@
 package com.example.demo.model;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Car {
 
     private int id = -1;
+
+    @Size(min = 7, max = 7)
     private String spz;
+
+    @NotBlank
     private String color;
+
+    @Min(value = 5)
+    @Max(value = 100)
     private float tankVolume;
+
+    @Min(value = 2)
+    @Max(value = 9)
     private int numberOfSeats;
 
     public int getId() {

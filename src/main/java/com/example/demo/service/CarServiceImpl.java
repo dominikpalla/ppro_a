@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.model.Car;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 
 @Service
