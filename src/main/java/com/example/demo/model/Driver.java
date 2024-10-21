@@ -1,13 +1,18 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+@Entity
+@Table(name = "drivers")
 public class Driver {
 
-    private int id = -1;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Size(min = 4, max = 20)
     @NotBlank
@@ -21,18 +26,18 @@ public class Driver {
     private int salary;
 
     public Driver() {}
-    public Driver(int id, String name, int age, int salary) {
+    public Driver(long id, String name, int age, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
