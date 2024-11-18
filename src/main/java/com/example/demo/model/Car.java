@@ -25,6 +25,18 @@ public class Car {
     @Max(value = 9)
     private int numberOfSeats;
 
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "driver_id")
+    private Driver driver;
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     public long getId() {
         return id;
     }

@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 @Table(name = "drivers")
 public class Driver {
@@ -25,12 +27,23 @@ public class Driver {
     @Min(value = 1)
     private int salary;
 
+    @OneToMany(mappedBy = "driver", cascade = CascadeType.REMOVE)
+    private List<Car> cars;
+
     public Driver() {}
     public Driver(long id, String name, int age, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public long getId() {
